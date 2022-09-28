@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Footer from "./component/footer";
+import Header from "./component/header";
+import Main from "./component/main";
+import ImageUploadExample from "./component/aside";
+import { Container } from "reactstrap";
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+      posts: []
+  };
+
+  async componentDidMount() {
+      try {
+          const res = await fetch('http://127.0.0.1:8000/api/');
+          const posts = await res.json();
+          this.setState({
+              posts
+          });
+      } catch (e) {
+          console.log(e);
+      }
+  }
+  
+  render() {
+    return (
+      <><Header />
+      <Container style={{ minHeight:"82vh"}} >
+      
+        {/* post 변수에 전역변수 this.state.posts 저장 후 Main의 props변수에 전달 */}
+        <Main post = {this.state.posts}></Main>
+
+      </Container>
+        <ImageUploadExample/>
+      <Footer /></>
+          );
+  }
 }
 
 export default App;
