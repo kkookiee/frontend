@@ -28,6 +28,10 @@ function ImageUploadExample() {
       )}
       <div className="imagestyle">
       <input type="file" accept="image/*" ref={fileInput} onChange={saveFileImage} />
+      <form>
+      <input type="submit" id="input_image" value="Submit"/>
+
+      </form>
       </div>
       <div className="buttonstyle">
         <button onClick={() => deleteFileImage()}> 삭제 </button>

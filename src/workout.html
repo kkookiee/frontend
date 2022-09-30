@@ -1,0 +1,34 @@
+<form method="POST" action="{% url 'workout' %}">
+    {% load static %}
+    {% csrf_token %}
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <meta charset="UTF-8">
+        <title>End page</title>
+    
+        <style>
+            input {
+                width: 200px;
+                height: 435x;
+                font-size: 18px;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <div class="main">
+            <h1 class="logo">Work done</h1>
+            <div class="container">
+                <p>Keyword has been sent.</p>
+                <p>The data will be sent to you in 24 hours.</p>
+                <p>Thank you.</p>
+                <input type="submit" id="signup" value="Done">
+            </div>
+        </div>
+    </body>
+    <!-- <h5>입력한 키워드가 요청되었습니다.</h5>
+    <input type="submit" value="exit">
+
+    <br> -->
+</form>

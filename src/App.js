@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Footer from "./component/footer";
 import Header from "./component/header";
 import Main from "./component/main";
+import NewStudentForm from './component/NewStudentForm';
 import ImageUploadExample from "./component/aside";
 import { Container } from "reactstrap";
 
@@ -27,13 +28,21 @@ class App extends Component {
   render() {
     return (
       <><Header />
-      <Container style={{ minHeight:"82vh"}} >
+      <Container style={{ minHeight:"82vh" }}>
       
         {/* post 변수에 전역변수 this.state.posts 저장 후 Main의 props변수에 전달 */}
         <Main post = {this.state.posts}></Main>
 
       </Container>
         <ImageUploadExample/>
+       <Container>
+        <NewStudentForm post = {this.props.post}
+                        resetState={this.props.resetState}
+                        toggle={this.toggle}
+                      
+        ></NewStudentForm>
+        </Container> 
+        <Container></Container>
       <Footer /></>
           );
   }
