@@ -5,15 +5,7 @@ import { Container } from 'react-bootstrap';
 
 function Main(props) {
     const item = props.post
-    props.post.map(item => (
-        <div  key={item.id}>
-            <h1>{item.title}</h1>
-            <span>{item.content}</span>
-            {console.log(props.post.image)}
-            <img src={item.image}></img>
-        </div>
-        
-    ))
+   
     console.log('asd')
     console.log(item.image)
 

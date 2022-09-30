@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Footer from "./component/footer";
 import Header from "./component/header";
 import Main from "./component/main";
-import NewStudentForm from './component/NewStudentForm';
+import UploadImageForm from './component/UploadImageForm';
 import ImageUploadExample from "./component/aside";
+import Labs from './component/Labs';
 import { Container } from "reactstrap";
 
 import './App.css';
@@ -36,13 +37,15 @@ class App extends Component {
       </Container>
         <ImageUploadExample/>
        <Container>
-        <NewStudentForm post = {this.props.post}
+        <UploadImageForm post = {this.props.post}
                         resetState={this.props.resetState}
                         toggle={this.toggle}
                       
-        ></NewStudentForm>
+        ></UploadImageForm>
         </Container> 
-        <Container></Container>
+        <Container>
+          <Labs/>
+        </Container>
       <Footer /></>
           );
   }
