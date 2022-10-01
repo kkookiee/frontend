@@ -24,7 +24,7 @@ function Labs() {
         const URL = API_URL+"upload/"
 
         axios({
-            method: "post",
+            method: "POST",
             url: URL,
             data: formData,
             headers: {

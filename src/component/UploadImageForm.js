@@ -7,20 +7,21 @@ import { API_URL } from "../index";
 function UploadImageForm() {
    const uploadModule = async (e) => {
     e.preventDefault();
-    const id = e.target[0].value;
-    // const upload_file = e.target[1].files[0];
+    // const id = e.target[0].value;
+    const upload_file = e.target[0].files[0];
     
     const formData = new FormData();
-    formData.append("title",id)
-    formData.append("content",'test')
-    // formData.append("files", upload_file);
+    // formData.append("title",id)
+    formData.append("image", upload_file);
     formData.append("enctype", "multipart/form-data")
 
-    const URL = API_URL+"upload/"
-    // const URL = API_URL+"upload/image/"
+    console.log('formdata')
+    console.log(upload_file)
+    // const URL = API_URL+"upload/"
+    const URL = API_URL+"upload/image/"
 
     axios({
-        method: "post",
+        method: "POST",
         url: URL,
         data: formData,
         headers: {
@@ -28,7 +29,12 @@ function UploadImageForm() {
         }
     }).then(function (response) {
         console.log(response)
-    })
+    }).then(function (){
+      const URL = API_URL+"upload/image/processing/"
+      axios.get(URL)
+      .then((Response)=>{console.log(Response.data)})
+      .catch((Error)=>{console.log(Error)})})
+      
   }
   
   const defaultIfEmpty = value => {
@@ -36,22 +42,12 @@ function UploadImageForm() {
   }
 
     return (
-      <Form onSubmit={uploadModule}>
-        <FormGroup>
-          <Label for="name">id:</Label>
-          <Input
-            type="text"
-            name="name"
-            value={defaultIfEmpty()}
-          />
-        </FormGroup>
-    
+      <Form onSubmit={uploadModule}>        
         <FormGroup>
           <Label for="image">image:</Label>
           <Input
-            type="text"
+            type="file"
             name="image"
-            value={defaultIfEmpty()}
           />
         </FormGroup>
         <Button>Send</Button>
