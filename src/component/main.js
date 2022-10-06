@@ -1,5 +1,4 @@
 import React from 'react';
-import star from './resource/star.gif'
 import './main.css'
 import { Container } from 'react-bootstrap';
 
@@ -7,10 +6,15 @@ function Main(props) {
     const item = props.post
    
     console.log('asd')
-    console.log(item.image)
+    console.log(item.image) 
+    console.log('asd')
 
     return (
         <div>
+            {console.log('asd')}
+            {console.log(item.image)} 
+            {console.log('asd')}
+            
             <main>
                 <Container>
                 {/* <img className='mainlogo' src = {star} alt = "loading.."
