@@ -1,31 +1,32 @@
 import React from 'react';
-import { Navbar, Container, Nav } from 'react-bootstrap';
 import icon from './resource/icon.png';
 import  './header.css';
 
 const Header = () => {
   return (
     <header>
-      <Navbar className = "navcolor" bg="primary" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">
-            <img
+      <div class="inner">
+        <h1><a href="#">
+          <img
               alt=""
               src={icon}
-              width="40"
-              height="40"
-              className="d-inline-block align-top"
+              width="45"
+              height="45"
             />{' '}
-            Image Fake
-          </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-      <hr></hr>
+            Image Fake</a></h1>
+          
+            <ul id="gnb">
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">YOUTUBE</a></li>
+                <li><a href="#">COMMUNITY</a></li>
+                <li><a href="#">LOCATION</a></li>
+            </ul>
+
+            <ul class="util">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Join</a></li>
+            </ul>
+        </div>
     </header>
   );
 }

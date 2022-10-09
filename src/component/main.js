@@ -8,14 +8,12 @@ function Main(props) {
         <div>
             <main>
                 <Container>
-                {props.post.map(item => (
+                {/* {props.post.map(item => (
                     <div  key={item.image}>
                         {console.log(props.post.image)}
                         <img src={item.image} style={{width:132,height:132}}></img>
-
                     </div>
-                    
-                ))}
+                ))} */}
                
                 
         </Container>

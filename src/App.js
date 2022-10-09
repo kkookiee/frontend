@@ -3,7 +3,6 @@ import Footer from "./component/footer";
 import Header from "./component/header";
 import Main from "./component/main";
 import UploadImageForm from './component/UploadImageForm';
-import Labs from './component/Labs';
 import { Container } from "reactstrap";
 
 import './App.css';
