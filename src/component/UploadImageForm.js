@@ -76,7 +76,7 @@ function UploadImageForm() {
               onChange={saveFileImage}
               placeholder="Your image"
               title="FILE"
-              hidden="true"
+              hidden={true}
             />
             <Label for="imgUpload" className="Button">Select FILE</Label>
             <Button className="btn-secondary" type="submit">Send</Button>
