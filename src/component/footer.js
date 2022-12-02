@@ -14,7 +14,6 @@ const Footer = () => {
                         <li><a href="#">Sitemap</a></li>
                     </ul>
                 </div>
-
                 <div class="lower">
                     <address>
                         Sangmyung University Capstone Design<br/>

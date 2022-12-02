@@ -1,67 +1,81 @@
-@charset 'utf-8';
-* {
-   margin: 0px;
-   padding: 0px;
-   box-sizing: border-box;
-}
-ul,
-ol {
-   list-style: none;
-}
-a {
-   text-decoration: none;
-}
+@font-face {
+   font-family: 'Happiness-Sans-Title';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+   font-weight: normal;
+   font-style: normal;
+ }
 
-/* header */
-header {
-   width: 100%;
-   border-bottom: 1px solid #ddd;
-}
-header .inner {
-   width: 1180px;
-   height: 120px;
-   margin: 0px auto;
-   position: relative; /*자식 absolute 요소의 기준점 설정*/
-}
-header .inner h1 {
-   position: absolute;
-   left: 0px;
-   bottom: 15px;
-}
-header .inner h1 a {
-   font: bold 24px/1 "arial";
-   color: #444;
-}
-header .inner .util {
-   position: absolute;
-   top: 20px;
-   right: 30px;
-}
-header .inner .util li {
-   float: left;
-}
-header .inner .util li a {
+ .header {
+   background-color: rgba(0,0,0,.8);
+   border:none;
+   position:fixed;
+   top: 0;
+   right:0;
+   left: 0;
+   min-width: 1240px;
+   height: 90px;
+   text-align: center;
+   z-index: 100;
+   box-sizing: border-box;
    display: block;
-   font: 12px/1 "arial";
-   color: #999;
-   padding: 0px 10px;
-}
-header .inner #gnb {
-   position: absolute;
-   bottom: 0px;
-   right: 0px;
-}
-header .inner #gnb li {
-   float: left;
-}
-header .inner #gnb li a {
-   display: block; /*인라인 요소는 block설정하여 크기를 조절가능*/
-   font: bold 15px/1 "arial";
-   color: #555;
-   padding: 20px 40px;
-   transition: all 0.5s;
-}
-header .inner #gnb li a:hover {
-   background: #555;
-   color: #fff;
-}
+ }
+ .navbar {
+   display: block;
+ }
+
+ .header .navmake{
+   font-size: 0;
+   text-align: center;    
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+ }
+
+ ul {
+   list-style: none;
+   display: flex;
+   display: block
+ }
+
+ .header .navmake .item {
+   display: inline-block;
+ }
+
+ li{
+   text-align: center;
+ }
+ 
+ .header .navmake .menu_link {
+   display: block;
+   height: 90px;
+   padding: 28px 285px;
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 18px;
+   letter-spacing: 0px;
+   -webkit-box-sizing:border-box;
+   box-sizing: border-box;
+ }
+
+ a {
+   text-decoration: none;
+   cursor: pointer;
+ } 
+
+ .header .navmake .item_wrap {
+   display: inline-block;
+   vertical-align: top;
+ }
+
+  .header .menu_link{
+   color: rgba(255,255,255,.6);
+ }
+ 
+ .header .navmake .menu_link .item_wrap {
+   font-family: 'Happiness-Sans-Title';
+ }
+ 
+ .item:hover .menu_link .item_wrap{
+   border-color:#fff
+ }
