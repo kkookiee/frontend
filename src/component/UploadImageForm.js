@@ -62,10 +62,9 @@ function UploadImageForm() {
     setFileImage("");
     console.log(fileImage);
   };
-
     return (
     <>
-      <Form onSubmit={uploadModule}>
+      <Form onSubmit={uploadModule} style = {{justifycontent: "center", alignitems: "center", margin: "0 auto"}}>
         <div>
             <Stack direction="horizontal" gap={3}>
               <Stack direction="vertical" gap={2}>
